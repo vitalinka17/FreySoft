@@ -3,29 +3,24 @@ import { createTheme, colors, Theme } from "@mui/material";
 const theme: Theme = createTheme({
   palette: {
     primary: {
-      main: "#FFFFFF",
-      contrastText: "#007042",
+      main: colors.amber[900],
     },
     secondary: {
-      main: colors.green[800],
+      main: colors.deepPurple[400],
     },
     // @ts-ignore
-    lightgrey: { main: "#D3D7DA" },
-    mediumgrey: { main: "#A0A9AF" },
-    darkgrey: { main: "rgba(33, 39, 40, 0.6)" },
-    graphite: { main: "#2E3438" },
-    black: { main: "#000000" },
-    warning: {
-      main: colors.orange[400],
-    },
-    lime: { main: colors.lime[800] },
+    deepBlue: { main: colors.deepPurple.A700 },
+    mediumGrey: { main: colors.grey[50] },
+    darkGrey: { main: colors.grey[700] },
+    white: { main: colors.common.white },
+    black: { main: colors.common.black },
+    green: { main: colors.green[400] },
   },
-  error: { main: colors.red[700] },
   typography: {
-    fontFamily: "Open Sans, Montserrat, sans-serif",
+    fontFamily: "Roboto, sans-serif",
     fontWeightBold: 700,
     fontWeightRegular: 400,
-    fontWeightMedium: 600,
+    fontWeightMedium: 500,
     fontWeightLight: 300,
   },
 });

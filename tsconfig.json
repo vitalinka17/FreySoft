@@ -1,11 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "noImplicitAny": false,
+    "target": "es2018",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -16,11 +13,19 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "isolatedModules": true,
+    // "sourceMap": true,
+    "inlineSourceMap": true,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types",
+      "../../node_modules/@types"
+    ],
+    "baseUrl": "./src",
+    "include": ["./src/**/*"]
+    // "inlineSources": true,
   },
-  "include": [
-    "src"
-  ]
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }
