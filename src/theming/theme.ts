@@ -9,7 +9,7 @@ const theme: Theme = createTheme({
       main: colors.deepPurple[400],
     },
     // @ts-ignore
-    deepBlue: { main: colors.deepPurple.A700 },
+    deepBlue: { main: "#2F3046" },
     mediumGrey: { main: colors.grey[50] },
     darkGrey: { main: colors.grey[700] },
     white: { main: colors.common.white },

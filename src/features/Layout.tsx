@@ -5,7 +5,16 @@ import { Container } from "@mui/material";
 
 const Layout: FC<{ children: ReactNode }> = ({ children }) => {
   return (
-    <Container maxWidth={"xs"} sx={{ padding: "30px" }}>
+    <Container
+      maxWidth={"xs"}
+      sx={{
+        padding: "30px",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        minHeight: "950px",
+      }}
+    >
       <Header />
       {children}
       <NavigationBar />
