@@ -23,7 +23,7 @@ const CreditCard = () => {
           borderRadius: "24px",
           position: "absolute",
           zIndex: "-1",
-          bottom: "110px",
+          bottom: "100px",
         }}
       />
       <Card

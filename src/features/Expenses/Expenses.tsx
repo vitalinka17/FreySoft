@@ -1,7 +1,4 @@
 import React, { useEffect } from "react";
-import Title from "../../components/Title/Title";
-import { Box, Typography } from "@mui/material";
-import TransactionTile from "../TransactionTile/TransactionTile";
 import { useAppDispatch } from "../../hooks/storeHook";
 import { useSelector } from "react-redux";
 import {
@@ -9,8 +6,12 @@ import {
   transactionsMetaSelector,
 } from "../../store/selectors/transactions";
 import { getTransactions } from "../../store/reducers/transactionsSlice";
+import { Box, Typography } from "@mui/material";
+import Title from "../../components/Title/Title";
+import TransactionTile from "../TransactionTile/TransactionTile";
+import ExpenseTile from "../../components/ExpenseTile/ExpenseTile";
 
-const Transactions = () => {
+const Expenses = () => {
   const dispatch = useAppDispatch();
 
   const data = useSelector(transactionsDataSelector);
@@ -32,7 +33,7 @@ const Transactions = () => {
           margin: "36px 0 28px",
         }}
       >
-        <Title text={"Transactions"} />
+        <Title text={"Expenses"} />
         <Typography
           sx={{ fontWeight: "400", fontSize: "12px", color: "darkGrey.main" }}
         >
@@ -42,10 +43,10 @@ const Transactions = () => {
       {transactionsLoading ? (
         <Typography>Loading</Typography>
       ) : (
-        <TransactionTile data={data} />
+        <ExpenseTile data={data} />
       )}
     </>
   );
 };
 
-export default Transactions;
+export default Expenses;

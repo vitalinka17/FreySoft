@@ -1,7 +1,4 @@
 import React, { useEffect } from "react";
-import Title from "../../components/Title/Title";
-import { Box, Typography } from "@mui/material";
-import TransactionTile from "../TransactionTile/TransactionTile";
 import { useAppDispatch } from "../../hooks/storeHook";
 import { useSelector } from "react-redux";
 import {
@@ -9,8 +6,10 @@ import {
   transactionsMetaSelector,
 } from "../../store/selectors/transactions";
 import { getTransactions } from "../../store/reducers/transactionsSlice";
+import { Box, Typography } from "@mui/material";
+import BankAccount from "../../components/BankAccount/BankAccount";
 
-const Transactions = () => {
+const Accounts = () => {
   const dispatch = useAppDispatch();
 
   const data = useSelector(transactionsDataSelector);
@@ -23,29 +22,25 @@ const Transactions = () => {
   }, [dispatch]);
 
   return (
-    <>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          margin: "36px 0 28px",
-        }}
-      >
-        <Title text={"Transactions"} />
-        <Typography
-          sx={{ fontWeight: "400", fontSize: "12px", color: "darkGrey.main" }}
-        >
-          View All
-        </Typography>
-      </Box>
+    <Box>
       {transactionsLoading ? (
         <Typography>Loading</Typography>
       ) : (
-        <TransactionTile data={data} />
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "20px",
+            minHeight: "250px",
+          }}
+        >
+          <BankAccount color={"secondary"} />
+          <BankAccount color={"primary"} />
+        </Box>
       )}
-    </>
+    </Box>
   );
 };
 
-export default Transactions;
+export default Accounts;

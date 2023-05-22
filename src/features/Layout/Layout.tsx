@@ -12,7 +12,7 @@ const Layout: FC<{ children: ReactNode }> = ({ children }) => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        minHeight: "950px",
+        gap: "36px",
       }}
     >
       <Header />
