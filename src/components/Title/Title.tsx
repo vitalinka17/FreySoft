@@ -1,18 +1,22 @@
 import React, { FC } from "react";
-
-type Item = {
-  id: number;
+import { Typography } from "@mui/material";
+type Props = {
   text: string;
 };
 
-type Props = {
-  color: string;
-  size: number;
-  data: Array<{ id: number; text: string }>;
-};
-
-const Title: FC<Props> = ({ color, size, data }) => {
-  return <div>Hello there</div>;
+const Title: FC<Props> = ({ text }) => {
+  return (
+    <Typography
+      sx={{
+        color: "black.main",
+        fontSize: "24px",
+        fontWeight: "500",
+        lineHeight: "28px",
+      }}
+    >
+      {text}
+    </Typography>
+  );
 };
 
 export default Title;

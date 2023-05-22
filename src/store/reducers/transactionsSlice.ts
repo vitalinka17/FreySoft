@@ -1,7 +1,13 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+
 type Item = {
-  month: string;
-  totalSpent: string;
+  store: string;
+  account: string;
+  date: string;
+  total: string;
+  rest: string;
+  percent: string;
+  img: string;
   id: number;
 };
 
@@ -15,10 +21,10 @@ const initialState: InitialState = {
   data: [],
 };
 
-export const getAnalytics = createAsyncThunk(
-  "analytics/fetchAnalytics",
+export const getTransactions = createAsyncThunk(
+  "transactions/fetchtransactions",
   async () => {
-    const data = await fetch("API/analytics.json", {
+    const data = await fetch("API/expenses.json", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -27,19 +33,19 @@ export const getAnalytics = createAsyncThunk(
     return data;
   }
 );
-export const analyticsSlice = createSlice({
-  name: "analytics",
+export const transactionsSlice = createSlice({
+  name: "transactions",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(getAnalytics.pending, (state) => {
+    builder.addCase(getTransactions.pending, (state) => {
       state.meta.loading = true;
     });
-    builder.addCase(getAnalytics.fulfilled, (state, action) => {
+    builder.addCase(getTransactions.fulfilled, (state, action) => {
       state.data = action.payload;
       state.meta.loading = false;
     });
   },
 });
 
-export default analyticsSlice.reducer;
+export default transactionsSlice.reducer;

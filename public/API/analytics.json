@@ -1,0 +1,37 @@
+[
+  {
+    "month": "January",
+    "totalSpent": "1234",
+    "id": 1
+  },
+  {
+    "month": "February",
+    "totalSpent": "3456",
+    "id": 2
+  },
+  {
+    "month": "March",
+    "totalSpent": "5368",
+    "id": 3
+  },
+  {
+    "month": "April",
+    "totalSpent": "2849",
+    "id": 4
+  },
+  {
+    "month": "May",
+    "totalSpent": "4986",
+    "id": 5
+  },
+  {
+    "month": "June",
+    "totalSpent": "400",
+    "id": 6
+  },
+  {
+    "month": "July",
+    "totalSpent": "789",
+    "id": 7
+  }
+]
