@@ -8,7 +8,7 @@ import {
 import { getTransactions } from "../../store/reducers/transactionsSlice";
 import { Box, Typography } from "@mui/material";
 import Title from "../../components/Title/Title";
-import TransactionTile from "../TransactionTile/TransactionTile";
+import TransactionTile from "../../components/TransactionTile/TransactionTile";
 import ExpenseTile from "../../components/ExpenseTile/ExpenseTile";
 
 const Expenses = () => {

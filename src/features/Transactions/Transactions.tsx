@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Title from "../../components/Title/Title";
 import { Box, Typography } from "@mui/material";
-import TransactionTile from "../TransactionTile/TransactionTile";
+import TransactionTile from "../../components/TransactionTile/TransactionTile";
 import { useAppDispatch } from "../../hooks/storeHook";
 import { useSelector } from "react-redux";
 import {

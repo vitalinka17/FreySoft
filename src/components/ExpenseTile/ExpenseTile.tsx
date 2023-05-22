@@ -1,8 +1,5 @@
 import React, { FC } from "react";
-import {
-  BoxContainer,
-  Props,
-} from "../../features/TransactionTile/TransactionTile";
+import { BoxContainer, Props } from "../TransactionTile/TransactionTile";
 import { Avatar, Box, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 

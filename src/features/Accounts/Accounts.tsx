@@ -32,7 +32,6 @@ const Accounts = () => {
             justifyContent: "center",
             alignItems: "center",
             gap: "20px",
-            minHeight: "250px",
           }}
         >
           <BankAccount color={"secondary"} />
