@@ -1,6 +1,6 @@
 import React, { FC, ReactNode } from "react";
-import Header from "./Header";
-import NavigationBar from "./NavigationBar";
+import Header from "../Header/Header";
+import NavigationBar from "../NavigationBar/NavigationBar";
 import { Container } from "@mui/material";
 
 const Layout: FC<{ children: ReactNode }> = ({ children }) => {
@@ -21,8 +21,5 @@ const Layout: FC<{ children: ReactNode }> = ({ children }) => {
     </Container>
   );
 };
-
-
-
 
 export default Layout;

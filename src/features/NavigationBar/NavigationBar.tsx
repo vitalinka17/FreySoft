@@ -6,8 +6,8 @@ import CreditCardIcon from "@mui/icons-material/CreditCard";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import SettingsIcon from "@mui/icons-material/Settings";
-import Icon from "../components/Icon";
-import { Pages } from "./Navigation";
+import Icon from "../../components/Icon/Icon";
+import { Pages } from "../Navigation/Navigation";
 
 const NavigationBar = () => {
   const navigate = useNavigate();

@@ -32,6 +32,7 @@ function YearDropDown() {
         value={year}
         sx={{
           backgroundColor: "primary.main",
+          height: "36px",
           borderRadius: "12px",
           ".css-hfutr2-MuiSvgIcon-root-MuiSelect-icon": {
             fontSize: "25px",

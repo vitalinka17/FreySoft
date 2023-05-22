@@ -6,8 +6,8 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import theme from "./theming";
 import store from "./store/store";
-import Navigation from "./features/Navigation";
-import Layout from "./features/Layout";
+import Navigation from "./features/Navigation/Navigation";
+import Layout from "./features/Layout/Layout";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

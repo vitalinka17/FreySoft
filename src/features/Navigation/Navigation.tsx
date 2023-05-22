@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Wallet from "../pages/Wallet";
-import Home from "../pages/Home";
+import Wallet from "../../pages/Wallet/Wallet";
+import Home from "../../pages/Home/Home";
 
 export enum Pages {
   HOME = "/home",

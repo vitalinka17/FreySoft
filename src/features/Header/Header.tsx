@@ -2,9 +2,9 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { Box, Avatar, Badge } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
-import Title from "../components/Title/Title";
+import Title from "../../components/Title/Title";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
-import { Pages } from "./Navigation";
+import { Pages } from "../Navigation/Navigation";
 
 const titleMap = {
   [Pages.WALLET]: "Expenses",
