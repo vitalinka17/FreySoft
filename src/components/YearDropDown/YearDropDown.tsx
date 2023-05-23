@@ -1,4 +1,5 @@
 import React from "react";
+import { SxProps } from "@mui/system";
 import {
   Select,
   MenuItem,
@@ -19,27 +20,12 @@ function YearDropDown() {
     setYear(typeof value === "string" ? value.split(",") : value);
   };
   return (
-    <FormControl
-      sx={{
-        m: 1,
-        width: "max-content",
-        mt: 3,
-        marginBottom: "20px",
-      }}
-    >
+    <FormControl sx={formControlStyled}>
       <Select
         multiple
         displayEmpty
         value={year}
-        sx={{
-          backgroundColor: "primary.main",
-          height: "36px",
-          borderRadius: "12px",
-          ".css-hfutr2-MuiSvgIcon-root-MuiSelect-icon": {
-            fontSize: "25px",
-            color: "white.main",
-          },
-        }}
+        sx={selectStyled}
         onChange={handleChange}
         input={<OutlinedInput />}
         renderValue={(selected) => {
@@ -70,4 +56,19 @@ function YearDropDown() {
     </FormControl>
   );
 }
+const formControlStyled: SxProps = {
+  m: 1,
+  width: "max-content",
+  mt: 3,
+  marginBottom: "20px",
+};
+const selectStyled: SxProps = {
+  backgroundColor: "primary.main",
+  height: "36px",
+  borderRadius: "12px",
+  ".css-hfutr2-MuiSvgIcon-root-MuiSelect-icon": {
+    fontSize: "25px",
+    color: "white.main",
+  },
+};
 export default YearDropDown;

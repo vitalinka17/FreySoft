@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
+import { SxProps } from "@mui/system";
 import { useAppDispatch } from "../../hooks/storeHook";
 import { useSelector } from "react-redux";
+import { Box, Typography } from "@mui/material";
+import { getTransactions } from "../../store/reducers/transactionsSlice";
 import {
   transactionsDataSelector,
   transactionsMetaSelector,
 } from "../../store/selectors/transactions";
-import { getTransactions } from "../../store/reducers/transactionsSlice";
-import { Box, Typography } from "@mui/material";
 import Title from "../../components/Title/Title";
-import TransactionTile from "../../components/TransactionTile/TransactionTile";
 import ExpenseTile from "../../components/ExpenseTile/ExpenseTile";
 
 const Expenses = () => {
@@ -25,20 +25,9 @@ const Expenses = () => {
 
   return (
     <>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          margin: "36px 0 28px",
-        }}
-      >
+      <Box sx={expensesContainer}>
         <Title text={"Expenses"} />
-        <Typography
-          sx={{ fontWeight: "400", fontSize: "12px", color: "darkGrey.main" }}
-        >
-          View All
-        </Typography>
+        <Typography sx={viewAllStyled}>View All</Typography>
       </Box>
       {transactionsLoading ? (
         <Typography>Loading</Typography>
@@ -48,5 +37,15 @@ const Expenses = () => {
     </>
   );
 };
-
+const expensesContainer: SxProps = {
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  marginTop: "36px",
+};
+export const viewAllStyled: SxProps = {
+  fontWeight: "400",
+  fontSize: "12px",
+  color: "darkGrey.main",
+};
 export default Expenses;
