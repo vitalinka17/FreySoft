@@ -41,7 +41,7 @@ const CardWrapper = styled("div")(({ theme }) => ({
   borderRadius: "10px",
   padding: "5px 10px",
 }));
-export const BoxContainer = styled("div")(({ theme }) => ({
+export const BoxContainer = styled("div")(() => ({
   display: "flex",
   flexDirection: "column",
   gap: "16px",

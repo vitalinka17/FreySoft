@@ -32,12 +32,12 @@ const BarChart: FC<Props> = ({ data, maxValue = 5500 }) => {
     </BoxContainer>
   );
 };
-const BoxContainer = styled("div")(({ theme }) => ({
+const BoxContainer = styled("div")(() => ({
   display: "flex",
   gap: "24px",
   alignItems: "flex-end",
 }));
-const BarItem = styled("div")(({ theme }) => ({
+const BarItem = styled("div")(() => ({
   textAlign: "center",
 }));
 
