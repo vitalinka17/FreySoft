@@ -1,13 +1,8 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
+import { Pages } from "../../boilerplates/Pages/Pages";
 import Wallet from "../../pages/Wallet/Wallet";
 import Home from "../../pages/Home/Home";
-
-export enum Pages {
-  HOME = "/home",
-  WALLET = "/wallet",
-  DEFAULT = "/",
-}
 
 const Navigation = () => {
   return (

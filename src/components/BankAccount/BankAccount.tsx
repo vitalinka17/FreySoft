@@ -2,29 +2,14 @@ import React, { FC } from "react";
 import { styled } from "@mui/system";
 import { Typography } from "@mui/material";
 import AccountNumber from "../AccountNumber/AccountNumber";
+import { SxProps } from "@emotion/react";
 
 const BankAccount: FC<{ color: string }> = ({ color }) => {
   return (
     <>
       <BoxSubstrate color={color}>
-        <Typography
-          sx={{
-            fontWeight: "500",
-            fontSize: "17px",
-            color: "white.main",
-          }}
-        >
-          Total Balance
-        </Typography>
-        <Typography
-          sx={{
-            fontWeight: "700",
-            fontSize: "28px",
-            color: "white.main",
-          }}
-        >
-          $76,22.00
-        </Typography>
+        <Typography sx={balanceNameStyled}>Total Balance</Typography>
+        <Typography sx={amountStyled}>$76,22.00</Typography>
         <AccountNumber color={color} />
       </BoxSubstrate>
     </>
@@ -43,4 +28,14 @@ const BoxSubstrate = styled("div")<BoxProps>(({ theme, color }) => ({
   alignItems: "start",
   position: "relative",
 }));
+export const balanceNameStyled: SxProps = {
+  fontWeight: "500",
+  fontSize: "17px",
+  color: "white.main",
+};
+export const amountStyled: SxProps = {
+  fontWeight: "700",
+  fontSize: "28px",
+  color: "white.main",
+};
 export default BankAccount;

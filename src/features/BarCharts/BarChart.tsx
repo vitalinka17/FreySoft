@@ -1,12 +1,7 @@
 import React, { FC, useState } from "react";
-import { styled } from "@mui/system";
+import { SxProps, styled } from "@mui/system";
+import { Item } from "../../store/reducers/analyticsSlice";
 import { Typography } from "@mui/material";
-
-type Item = {
-  month: string;
-  totalSpent: string;
-  id: number;
-};
 
 type Props = {
   data: Array<Item>;
@@ -24,17 +19,11 @@ const BarChart: FC<Props> = ({ data, maxValue = 5500 }) => {
         const heightRes = heightProportion();
         return (
           <BarItem key={id}>
-            <Typography
-              sx={{ fontWeight: "400", fontSize: "10px", marginTop: "5px" }}
-              className="text"
-            >
+            <Typography sx={totalSpentStyled} className="text">
               ${totalSpent}
             </Typography>
             <Bar height={heightRes.toString()} />
-            <Typography
-              sx={{ fontWeight: "400", fontSize: "13px", marginTop: "16px" }}
-              className="text"
-            >
+            <Typography sx={monthStyled} className="text">
               {month.slice(0, 3)}
             </Typography>
           </BarItem>
@@ -69,5 +58,14 @@ const Bar = styled("div")<BarProps>(({ theme, height }) => ({
     },
   },
 }));
-
+const totalSpentStyled: SxProps = {
+  fontWeight: "400",
+  fontSize: "10px",
+  marginTop: "5px",
+};
+const monthStyled: SxProps = {
+  fontWeight: "400",
+  fontSize: "13px",
+  marginTop: "16px",
+};
 export default BarChart;

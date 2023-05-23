@@ -1,17 +1,8 @@
 import React, { FC } from "react";
-import { styled } from "@mui/system";
+import { SxProps, styled } from "@mui/system";
 import { Avatar, Box, Typography } from "@mui/material";
-
-export type Item = {
-  store: string;
-  account: string;
-  date: string;
-  total: string;
-  rest: string;
-  percent: string;
-  img: string;
-  id: number;
-};
+import { Item } from "../../store/reducers/transactionsSlice";
+import { accountNameStyled, avatarStyled } from "../ExpenseTile/ExpenseTile";
 
 export type Props = {
   data: Array<Item>;
@@ -23,49 +14,14 @@ const TransactionTile: FC<Props> = ({ data }) => {
       {data.map(({ store, account, date, total, img, id }) => {
         return (
           <CardWrapper key={id}>
-            <Avatar src={img} alt="store" sx={{ width: 39, height: 39 }} />
+            <Avatar src={img} alt="store" sx={avatarStyled} />
             <Box>
-              <Typography
-                sx={{
-                  fontWeight: "500",
-                  fontSize: "16px",
-                }}
-              >
-                {store}
-              </Typography>
-              <Typography
-                sx={{
-                  fontWeight: "400",
-                  fontSize: "12px",
-                  color: "darkGrey.main",
-                }}
-              >
-                {account}
-              </Typography>
+              <Typography fontWeight={500}>{store}</Typography>
+              <Typography sx={accountNameStyled}>{account}</Typography>
             </Box>
-            <Box
-              sx={{
-                textAlign: "end",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontWeight: "500",
-                  fontSize: "18px",
-                  color: "green.main",
-                }}
-              >
-                ${total}
-              </Typography>
-              <Typography
-                sx={{
-                  fontWeight: "400",
-                  fontSize: "12px",
-                  color: "darkGrey.main",
-                }}
-              >
-                {date}
-              </Typography>
+            <Box sx={textPositionStyled}>
+              <Typography sx={totalSpanStyled}>${total}</Typography>
+              <Typography sx={accountNameStyled}>{date}</Typography>
             </Box>
           </CardWrapper>
         );
@@ -90,5 +46,15 @@ export const BoxContainer = styled("div")(({ theme }) => ({
   flexDirection: "column",
   gap: "16px",
   alignItems: "center",
+  height: "150px",
+  overflow: "scroll",
 }));
+const totalSpanStyled: SxProps = {
+  fontWeight: "500",
+  fontSize: "18px",
+  color: "green.main",
+};
+const textPositionStyled: SxProps = {
+  textAlign: "end",
+};
 export default TransactionTile;

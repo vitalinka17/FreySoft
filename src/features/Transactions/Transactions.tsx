@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
-import Title from "../../components/Title/Title";
+import { SxProps } from "@mui/system";
 import { Box, Typography } from "@mui/material";
-import TransactionTile from "../../components/TransactionTile/TransactionTile";
 import { useAppDispatch } from "../../hooks/storeHook";
 import { useSelector } from "react-redux";
 import {
@@ -9,6 +8,9 @@ import {
   transactionsMetaSelector,
 } from "../../store/selectors/transactions";
 import { getTransactions } from "../../store/reducers/transactionsSlice";
+import Title from "../../components/Title/Title";
+import TransactionTile from "../../components/TransactionTile/TransactionTile";
+import { viewAllStyled } from "../Expenses/Expenses";
 
 const Transactions = () => {
   const dispatch = useAppDispatch();
@@ -24,20 +26,9 @@ const Transactions = () => {
 
   return (
     <>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          margin: "36px 0 28px",
-        }}
-      >
+      <Box sx={transactionsContainer}>
         <Title text={"Transactions"} />
-        <Typography
-          sx={{ fontWeight: "400", fontSize: "12px", color: "darkGrey.main" }}
-        >
-          View All
-        </Typography>
+        <Typography sx={viewAllStyled}>View All</Typography>
       </Box>
       {transactionsLoading ? (
         <Typography>Loading</Typography>
@@ -46,6 +37,11 @@ const Transactions = () => {
       )}
     </>
   );
+};
+const transactionsContainer: SxProps = {
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
 };
 
 export default Transactions;
